@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+native/3ds/build/
+native/3ds/*.elf
+native/3ds/*.3dsx

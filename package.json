@@ -1,0 +1,29 @@
+{
+  "name": "projetos",
+  "version": "1.0.0",
+  "description": "OpenLink is a homebrew-oriented alternative multiplayer platform for Nintendo 3DS and Nintendo Switch, with a long-term goal of running supported 3DS homebrew software through a Switch emulator and connecting it to real 3DS clients.",
+  "main": "dist/server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "client-demo": "node dist/client-demo.js",
+    "demo": "node dist/demo-client.js",
+    "live-demo": "node dist/live-demo.js",
+    "start": "node dist/server.js",
+    "test": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/ws": "^8.18.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "ws": "^8.22.1"
+  }
+}
