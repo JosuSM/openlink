@@ -4,6 +4,7 @@ dist/
 .env
 .env.*
 !.env.example
+CIAToolsN.exe
 native/3ds/build/
 native/3ds/*.elf
 native/3ds/*.3dsx
