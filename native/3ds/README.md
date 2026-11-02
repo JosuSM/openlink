@@ -36,6 +36,8 @@ The script builds the ELF and 3DSX using the Render URL, then stages them under 
 
 Use `assets/OpenLink-48.png` as the application icon in CIATools. The editable source is `assets/OpenLink.svg`, and `assets/OpenLink-256.png` is available for larger metadata or banner work.
 
+Use `assets/OpenLink-banner.png` as the 2D banner in CIATools. Its editable source is `assets/OpenLink-banner.svg`. If CIATools asks for a 3D layer or audio asset, leave those optional fields empty for the first OpenLink package.
+
 ## Next native slice
 
 Replace the local state display with a transport adapter that implements session creation, session renewal, encounter publish/consume, and live room state. Keep the adapter independent from the UI so the same protocol can later be used by a supported homebrew game.

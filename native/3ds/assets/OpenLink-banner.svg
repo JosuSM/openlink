@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 256 128">
+  <rect width="256" height="128" fill="#12304A"/>
+  <rect x="0" y="0" width="8" height="128" fill="#B7F0D8"/>
+  <circle cx="58" cy="64" r="39" fill="#1C8C88"/>
+  <path d="M35 64c0-10 8-18 18-18h12c10 0 18 8 18 18s-8 18-18 18H53" fill="none" stroke="#F5FBFA" stroke-width="9" stroke-linecap="round"/>
+  <path d="M81 64c0 10-8 18-18 18H51c-10 0-18-8-18-18s8-18 18-18h12" fill="none" stroke="#B7F0D8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M48 64h25" fill="none" stroke="#12304A" stroke-width="6" stroke-linecap="round"/>
+  <text x="112" y="73" fill="#F5FBFA" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="bold">OpenLink</text>
+</svg>
