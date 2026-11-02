@@ -16,7 +16,13 @@ make
 
 The build produces `openlink_3ds.3dsx`. The first application validates the native build boundary, screen output, input handling, and shared protocol constants. It does not connect to OpenLink yet.
 
-The application now performs a one-time `GET /health` request at startup. Before building, change `OPENLINK_SERVER_URL` in `source/main.c` to the LAN address of the machine running the OpenLink server. The default address is only a placeholder.
+The application now performs a one-time `GET /health` request at startup. The default build targets the Render service at `https://openlink-server.onrender.com/health`. Override it for another deployment or a LAN server:
+
+```text
+make SERVER_URL=https://your-service.onrender.com/health
+```
+
+The HTTPS certificate is validated through the default libctru root certificates. If a deployment uses a certificate chain unavailable on the 3DS, it must provide a compatible trusted root before production use.
 
 ## Next native slice
 

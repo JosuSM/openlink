@@ -1,13 +1,10 @@
 #include <3ds.h>
 #include <3ds/services/httpc.h>
+#include <3ds/services/sslc.h>
 #include <stdio.h>
 #include <string.h>
 
 #include "../openlink_protocol.h"
-
-#ifndef OPENLINK_SERVER_URL
-#define OPENLINK_SERVER_URL "http://192.168.1.100:8787/health"
-#endif
 
 static OpenLinkPlayerState player_state;
 
@@ -16,6 +13,11 @@ static Result check_openlink_server(u32 *status_code) {
     Result result = httpcOpenContext(&context, HTTPC_METHOD_GET, OPENLINK_SERVER_URL, 0);
     if (R_FAILED(result)) {
         return result;
+    }
+
+    if (strncmp(OPENLINK_SERVER_URL, "https://", 8) == 0) {
+        httpcAddDefaultCert(&context, SSLC_DefaultRootCert_USERTrust);
+        httpcAddDefaultCert(&context, SSLC_DefaultRootCert_DigiCert_EV);
     }
 
     result = httpcBeginRequest(&context);

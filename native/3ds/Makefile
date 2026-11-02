@@ -1,10 +1,12 @@
 TARGET := openlink_3ds
 BUILD := build
 SOURCE := source
+SERVER_URL ?= https://openlink-server.onrender.com/health
 
 ARCH := -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 INCLUDE := -I$(CURDIR) -I$(DEVKITPRO)/libctru/include
 CFLAGS := -g -Wall -Wextra -O2 -mword-relocations -ffunction-sections $(ARCH) -D__3DS__ $(INCLUDE)
+CFLAGS += -DOPENLINK_SERVER_URL=\"$(SERVER_URL)\"
 LDFLAGS := -specs=3dsx.specs -g $(ARCH) -Wl,--gc-sections -L$(DEVKITPRO)/libctru/lib
 LIBS := -lctru -lm
 
