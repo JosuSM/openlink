@@ -436,6 +436,16 @@ const handleRequest = async (request: IncomingMessage, response: ServerResponse)
   const parts = url.pathname.split("/").filter(Boolean);
 
   try {
+    if (method === "GET" && url.pathname === "/") {
+      sendJson(response, 200, {
+        name: "OpenLink server",
+        status: "ok",
+        protocolVersion: PROTOCOL_VERSION,
+        health: "/health",
+      });
+      return;
+    }
+
     if (method === "GET" && url.pathname === "/health") {
       sendJson(response, 200, { status: "ok", protocolVersion: PROTOCOL_VERSION });
       return;
