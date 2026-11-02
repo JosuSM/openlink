@@ -24,6 +24,16 @@ make SERVER_URL=https://your-service.onrender.com/health
 
 The HTTPS certificate is validated through the default libctru root certificates. If a deployment uses a certificate chain unavailable on the 3DS, it must provide a compatible trusted root before production use.
 
+## CIA preparation
+
+With CIATools downloaded to its default temporary path, prepare its input files with:
+
+```powershell
+.\scripts\prepare-cia.ps1 -NoLaunch
+```
+
+The script builds the ELF and 3DSX using the Render URL, then stages them under `native/3ds/cia/input`. Run it without `-NoLaunch` to open CIATools in that folder. CIATools still requires interactive creation or selection of the Title ID, RSF, ICN, and banner resources.
+
 ## Next native slice
 
 Replace the local state display with a transport adapter that implements session creation, session renewal, encounter publish/consume, and live room state. Keep the adapter independent from the UI so the same protocol can later be used by a supported homebrew game.

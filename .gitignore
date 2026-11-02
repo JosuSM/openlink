@@ -7,3 +7,4 @@ dist/
 native/3ds/build/
 native/3ds/*.elf
 native/3ds/*.3dsx
+native/3ds/cia/input/
